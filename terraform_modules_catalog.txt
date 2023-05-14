@@ -1,0 +1,396 @@
+* [env_deployment](../e-hashi-zerotrust-2022/terraform/env_deployment)
+    Description: Providers: google, kubernetes, helm, =, acme, gcloud, google, vault
+    Quality: High
+    Size: 21 files
+    Score: 8
+
+* [module-gke-consul](../e-hashi-zerotrust-2022/terraform/env_deployment/modules/module-gke-consul)
+    Description: 
+    Quality: Low
+    Size: 9 files
+    Score: 1
+
+* [tf-json-iterate](../a-terraform-module-arctiqEmployee/tests/tf-json-iterate)
+    Description: 
+    Quality: Low
+    Size: 7 files
+    Score: 1
+
+* [fs-tests](../a-terraform-module-arctiqEmployee/tests/fs-tests)
+    Description: 
+    Quality: Low
+    Size: 2 files
+    Score: 1
+
+* [examples](../a-terraform-module-arctiqEmployee/examples)
+    Description: 
+    Quality: Low
+    Size: 1 files
+    Score: 1
+
+* [terraform](../a-hashitalks-canada-2021-consul/terraform)
+    Description: Providers: google, kubernetes, helm, google, kubectl
+    Quality: Medium
+    Size: 109 files
+    Score: 6
+
+* [module-gce-consul](../a-hashitalks-canada-2021-consul/terraform/modules/module-gce-consul)
+    Description: 
+    Quality: Medium
+    Size: 8 files
+    Score: 4
+
+* [module-gke-consul](../a-hashitalks-canada-2021-consul/terraform/modules/module-gke-consul)
+    Description: 
+    Quality: Medium
+    Size: 11 files
+    Score: 5
+
+* [module-gke-vault](../a-hashitalks-canada-2021-consul/terraform/modules/module-gke-vault)
+    Description: 
+    Quality: Medium
+    Size: 14 files
+    Score: 5
+
+* [build-labs](../t-workshops/build-labs)
+    Description: Providers: vault, google, google-beta, metal, acme, azurerm, azuread, aws
+    Quality: Low
+    Size: 102 files
+    Score: 3
+
+* [gh_config](../t-workshops/build-labs/gh_config)
+    Description: 
+    Quality: Low
+    Size: 5 files
+    Score: 1
+
+* [terraform-workshop-ansible](../t-workshops/build-labs/terraform-workshop-ansible)
+    Description: Providers: =, =
+    Quality: High
+    Size: 19 files
+    Score: 8
+
+* [terraform-workshop-anthos-vmware](../t-workshops/build-labs/terraform-workshop-anthos-vmware)
+    Description: 
+    Quality: High
+    Size: 16 files
+    Score: 8
+
+* [terraform-workshop-gke](../t-workshops/build-labs/terraform-workshop-gke)
+    Description: Providers: =, =
+    Quality: Low
+    Size: 3 files
+    Score: 1
+
+* [terraform-workshop-instructors](../t-workshops/build-labs/terraform-workshop-instructors)
+    Description: Providers: =, kubernetes
+    Quality: High
+    Size: 7 files
+    Score: 7
+
+* [terraform-workshop-ocp](../t-workshops/build-labs/terraform-workshop-ocp)
+    Description: 
+    Quality: High
+    Size: 9 files
+    Score: 7
+
+* [terraform-workshop-students-core-aws](../t-workshops/build-labs/terraform-workshop-students-core-aws)
+    Description: Providers: Can
+    Quality: High
+    Size: 5 files
+    Score: 7
+
+* [terraform-workshop-students-core-azure](../t-workshops/build-labs/terraform-workshop-students-core-azure)
+    Description: Providers: terraform, terraform, terraform, terraform, terraform, terraform, terraform, terraform
+    Quality: High
+    Size: 6 files
+    Score: 7
+
+* [terraform-workshop-students-core](../t-workshops/build-labs/terraform-workshop-students-core)
+    Description: 
+    Quality: High
+    Size: 6 files
+    Score: 7
+
+* [terraform-workshop-terraform](../t-workshops/build-labs/terraform-workshop-terraform)
+    Description: Providers: gcloud
+    Quality: High
+    Size: 11 files
+    Score: 8
+
+* [terraform-workshop-vault](../t-workshops/build-labs/terraform-workshop-vault)
+    Description: 
+    Quality: Medium
+    Size: 5 files
+    Score: 4
+
+* [simple_terraform](../simple_terraform)
+    Description: 
+    Quality: Low
+    Size: 5 files
+    Score: 1
+
+* [terraform](../a-base-ops/ansible/packet-lab-builder/terraform)
+    Description: Providers: packet
+    Quality: Low
+    Size: 6 files
+    Score: 1
+
+* [arctiq-dns](../a-base-ops/arctiq-dns)
+    Description: Providers: google, cloudflare
+    Quality: High
+    Size: 16 files
+    Score: 8
+
+* [packet_esx_cluster](../a-base-ops/terraform/packet_esx_cluster)
+    Description: Providers: packet
+    Quality: Low
+    Size: 8 files
+    Score: 1
+
+* [terraform-gcp](../a-base-ops/ControlStation1/terraform-gcp)
+    Description: Providers: google, cloudflare
+    Quality: Low
+    Size: 6 files
+    Score: 1
+
+* [terraform-aws](../a-base-ops/ControlStation1/terraform-aws)
+    Description: Providers: aws, cloudflare, vault
+    Quality: Medium
+    Size: 11 files
+    Score: 5
+
+* [terraform-vault](../a-base-ops/ControlStation1/terraform-vault)
+    Description: Providers: vault
+    Quality: High
+    Size: 30 files
+    Score: 8
+
+* [terraform-core](../a-base-ops/ControlStation1/terraform-core)
+    Description: Providers: google-beta, google-beta, CALICO, google, google-beta, aws, kubernetes, shell, cloudflare
+    Quality: High
+    Size: 31 files
+    Score: 8
+
+* [gke](../a-base-ops/ControlStation1/terraform-core/modules/gke)
+    Description: Providers: CALICO
+    Quality: Low
+    Size: 5 files
+    Score: 1
+
+* [cluster_deps](../a-base-ops/ControlStation1/terraform-core/modules/cluster_deps)
+    Description: 
+    Quality: Medium
+    Size: 8 files
+    Score: 4
+
+* [terraform-bk](../a-base-ops/accounts/terraform-bk)
+    Description: Providers: google, vault, gsuite, aws
+    Quality: High
+    Size: 24 files
+    Score: 8
+
+* [terraform](../a-base-ops/accounts/terraform)
+    Description: Providers: google, vault, gsuite, aws
+    Quality: High
+    Size: 25 files
+    Score: 8
+
+* [core](../ext-p-opentext-terraform-aws-to-gcp/terraform-gcp/envs/core)
+    Description: Providers: google, google-beta
+    Quality: Low
+    Size: 10 files
+    Score: 1
+
+* [customer-environments](../ext-p-opentext-terraform-aws-to-gcp/terraform-gcp/envs/customer-environments)
+    Description: Providers: Core, google, google-beta
+    Quality: Low
+    Size: 10 files
+    Score: 1
+
+* [efs](../ext-p-opentext-terraform-aws-to-gcp/terraform-gcp/modules/efs)
+    Description: 
+    Quality: Low
+    Size: 3 files
+    Score: 1
+
+* [eks](../ext-p-opentext-terraform-aws-to-gcp/terraform-gcp/modules/eks)
+    Description: Providers: kubernetes
+    Quality: High
+    Size: 3 files
+    Score: 7
+
+* [gcp_devtools](../ext-p-opentext-terraform-aws-to-gcp/terraform-gcp/modules/gcp_devtools)
+    Description: 
+    Quality: Low
+    Size: 4 files
+    Score: 1
+
+* [gcp_ovpn](../ext-p-opentext-terraform-aws-to-gcp/terraform-gcp/modules/gcp_ovpn)
+    Description: 
+    Quality: Low
+    Size: 5 files
+    Score: 1
+
+* [gcp_sql](../ext-p-opentext-terraform-aws-to-gcp/terraform-gcp/modules/gcp_sql)
+    Description: 
+    Quality: Low
+    Size: 4 files
+    Score: 1
+
+* [gcp_subnet](../ext-p-opentext-terraform-aws-to-gcp/terraform-gcp/modules/gcp_subnet)
+    Description: 
+    Quality: Low
+    Size: 4 files
+    Score: 1
+
+* [gcp_vpc](../ext-p-opentext-terraform-aws-to-gcp/terraform-gcp/modules/gcp_vpc)
+    Description: 
+    Quality: High
+    Size: 4 files
+    Score: 7
+
+* [gke](../ext-p-opentext-terraform-aws-to-gcp/terraform-gcp/modules/gke)
+    Description: Providers: =, CALICO, =, =, kubernetes
+    Quality: High
+    Size: 22 files
+    Score: 8
+
+* [rds](../ext-p-opentext-terraform-aws-to-gcp/terraform-gcp/modules/rds)
+    Description: 
+    Quality: Low
+    Size: 3 files
+    Score: 1
+
+* [subnets](../ext-p-opentext-terraform-aws-to-gcp/terraform-gcp/modules/subnets)
+    Description: 
+    Quality: Medium
+    Size: 3 files
+    Score: 4
+
+* [m-vaultworkflows](../m-vaultworkflows)
+    Description: Providers: google, kubernetes, helm
+    Quality: Low
+    Size: 96 files
+    Score: 3
+
+* [a-onboarding](../a-onboarding)
+    Description: 
+    Quality: Low
+    Size: 65 files
+    Score: 3
+
+* [gcp_sandbox](../a-onboarding/modules/gcp_sandbox)
+    Description: Providers: google
+    Quality: Low
+    Size: 8 files
+    Score: 1
+
+* [tf-hosts](../tf-hosts)
+    Description: 
+    Quality: Low
+    Size: 6 files
+    Score: 1
+
+* [terraform-google-gke](../terraform-google-gke)
+    Description: Providers: helm
+    Quality: Low
+    Size: 77 files
+    Score: 3
+
+* [cncf-cks](../cncf-cks)
+    Description: Providers: google
+    Quality: Low
+    Size: 36 files
+    Score: 2
+
+* [s8-hosting-mig](../s8-mothership/terraform-modules/s8-hosting-mig)
+    Description: Providers: google
+    Quality: Low
+    Size: 6 files
+    Score: 1
+
+* [s8-gcp-project](../s8-mothership/terraform-modules/s8-gcp-project)
+    Description: 
+    Quality: Low
+    Size: 6 files
+    Score: 1
+
+* [platform](../s8-mothership/controlstation/platform)
+    Description: 
+    Quality: Low
+    Size: 9 files
+    Score: 1
+
+* [cs-network](../s8-mothership/controlstation/cs-terraform-modules/cs-network)
+    Description: Providers: google
+    Quality: Medium
+    Size: 6 files
+    Score: 4
+
+* [cs-k8s](../s8-mothership/controlstation/cs-terraform-modules/cs-k8s)
+    Description: Providers: google
+    Quality: Low
+    Size: 6 files
+    Score: 1
+
+* [cs-gcp-project](../s8-mothership/controlstation/cs-terraform-modules/cs-gcp-project)
+    Description: 
+    Quality: High
+    Size: 7 files
+    Score: 7
+
+* [terraform](../ace-consul-peering-demo/terraform)
+    Description: 
+    Quality: Low
+    Size: 580 files
+    Score: 3
+
+* [us-central](../ace-consul-peering-demo/terraform/us-central)
+    Description: Providers: google, kubectl, kubernetes, helm, kubectl
+    Quality: Low
+    Size: 146 files
+    Score: 3
+
+* [northamerica-northeast](../ace-consul-peering-demo/terraform/northamerica-northeast)
+    Description: Providers: google, kubectl, kubernetes, helm
+    Quality: Low
+    Size: 77 files
+    Score: 3
+
+* [terraform-consul-gke](../terraform-consul-gke)
+    Description: 
+    Quality: Medium
+    Size: 355 files
+    Score: 6
+
+* [terraform](../a-basecamp/terraform)
+    Description: 
+    Quality: Low
+    Size: 27 files
+    Score: 2
+
+* [terraform-module-gcp-sandbox](../a-basecamp/terraform/modules/terraform-module-gcp-sandbox)
+    Description: 
+    Quality: Low
+    Size: 6 files
+    Score: 1
+
+* [terraform-module-github](../a-basecamp/terraform/modules/terraform-module-github)
+    Description: 
+    Quality: Low
+    Size: 8 files
+    Score: 1
+
+* [tftests](../tftests)
+    Description: Providers: github
+    Quality: Low
+    Size: 14 files
+    Score: 2
+
+* [platform](../ace-kube-portworx/terraform/platform)
+    Description: 
+    Quality: Low
+    Size: 35 files
+    Score: 2
+
