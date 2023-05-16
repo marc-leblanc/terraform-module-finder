@@ -3,7 +3,13 @@ import sys
 import subprocess
 import argparse
 import glob
+import requests
+import tempfile
+import shutil
+import time
 
+
+RATE_LIMIT_DELAY = 1  # Delay in seconds between API requests
 
 # Function to check if a directory contains a Terraform module using terraform-docs
 def is_terraform_module(directory):
@@ -111,9 +117,16 @@ def process_local_directories(directory):
     return modules
 
 
-# Function to process directories on GitHub
 def process_github_repositories(org_name, access_token):
-    repositories = get_repositories()
+    headers = {
+        "Authorization": f"Bearer {access_token}",
+        "Accept": "application/vnd.github.v3+json"
+    }
+    url = f"https://api.github.com/orgs/{org_name}/repos"
+    response = requests.get(url, headers=headers)
+    response.raise_for_status()
+    repositories = response.json()
+    
     catalog = []
     total_repos = len(repositories)  # Total repositories scanned
     total_modules = 0  # Total modules found
@@ -121,40 +134,36 @@ def process_github_repositories(org_name, access_token):
     for repository in repositories:
         repo_name = repository["name"]
         repo_url = repository["html_url"]
-        repo_content_url = repository["contents_url"].replace("{+path}", "")
-        headers = {
-            "Authorization": f"Bearer {access_token}",
-            "Accept": "application/vnd.github.v3+json"
-        }
-        try:
-            response = requests.get(repo_content_url, headers=headers)
-            response.raise_for_status()
-            content = response.json()
+        repo_clone_url = repository["clone_url"]
 
-            for item in content:
-                if item["type"] == "dir":
-                    if is_terraform_module(item["path"]):
-                        total_modules += 1
-                        module_name = get_module_name(item["path"])
-                        if not module_name:
-                            module_name = f"Hypothesized module name: {repo_name}/{item['name']}"
-                        module_description = get_module_description(item["path"])
-                        if not module_description:
-                            module_description = "Hypothesized module description"
-                        module_quality = calculate_module_quality(item["path"])
-                        module_size = calculate_module_size(item["path"])
-                        module_score = calculate_module_score(item["path"])
-                        catalog.append((module_name, repo_url, module_description, module_quality, module_size, module_score))
-        except requests.exceptions.HTTPError as err:
-            if err.response.status_code == 404:
-                print(f"Skipping empty repository: {repo_name}")
-            else:
-                raise
+        # Create a temporary directory to clone the repository
+        with tempfile.TemporaryDirectory() as temp_dir:
+            try:
+                # Clone the repository locally
+                print(f"Cloning repository: {repo_name}")
+                subprocess.check_call(["git", "clone", repo_clone_url, temp_dir])
 
+                # Recursively process the cloned directory for Terraform modules
+                modules = process_local_directories(temp_dir)
+
+                # Update catalog and module count
+                for module in modules:
+                    module_name, _, module_description, module_quality, module_size, module_score = module
+                    catalog.append((module_name, repo_url, module_description, module_quality, module_size, module_score))
+
+                # Print completion message
+                print(f"Completed processing repository: {repo_name}")
+
+            except subprocess.CalledProcessError as e:
+                print(f"Failed to clone repository: {repo_name}")
+                print(e)
+                continue
     return catalog, total_repos, total_modules
 
 
-# Main function
+
+
+
 def main():
     parser = argparse.ArgumentParser(description="Terraform Module Finder")
     parser.add_argument("--path", help="Path to local directory for processing")
@@ -171,24 +180,32 @@ def main():
         if not org_name or not access_token:
             print("Please set the GITHUB_ORGANIZATION and GITHUB_ACCESS_TOKEN environment variables.")
             sys.exit(1)
-        modules = process_github_repositories(org_name, access_token)
+        modules, total_repos, total_modules = process_github_repositories(org_name, access_token)
     else:
         # Default option: Process current directory
         modules = process_local_directories(os.getcwd())
 
-    # Write the catalog to a file
-    with open("terraform_modules_catalog.txt", "w") as file:
-        for module in modules:
-            module_name, module_path, module_description, module_quality, module_size, module_score = module
-            file.write(f"* [{module_name}]({module_path})\n")
-            file.write(f"    Description: {module_description}\n")
-            file.write(f"    Quality: {module_quality}\n")
-            file.write(f"    Size: {module_size} files\n")
-            file.write(f"    Score: {module_score}\n\n")
+    # Check if any modules are found in the catalog
+    if modules:
+        catalog, total_repos, total_modules = modules
 
-    # Print statistics
-    print("Catalog generation complete!")
-    print(f"Total Modules Found: {len(modules)}")
+        # Write the catalog to a file
+        with open("terraform_modules_catalog.txt", "w") as file:
+            for module in catalog:
+                module_name, module_path, module_description, module_quality, module_size, module_score = module
+                file.write(f"* [{module_name}]({module_path})\n")
+                file.write(f"    Description: {module_description}\n")
+                file.write(f"    Quality: {module_quality}\n")
+                file.write(f"    Size: {module_size} files\n")
+                file.write(f"    Score: {module_score}\n\n")
+
+        # Print statistics
+        print("Catalog generation complete!")
+        print(f"Total Repositories Scanned: {total_repos}")
+        print(f"Total Modules Found: {total_modules}")
+    else:
+        print("No modules found.")
+
 
 
 # Run the script
